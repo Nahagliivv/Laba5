@@ -1,0 +1,70 @@
+﻿using System;
+using System.Xml.Serialization;
+
+namespace Lab5
+{
+    class Ball : Inventory, Iusing //наследование св-в инвентаря
+    {
+        internal string material; //материал
+        internal int year_of_create; //дата создания
+        internal string brand; //бренд
+        public string Brand { get { return brand; } } ////////////свойства
+        public int Year_of_create { get { return year_of_create; } }
+        public string Material { get { return material; } }
+
+        public Ball()
+        {
+            Quantity = 0;
+            Price = 0;
+            material ="";
+            year_of_create =0;
+            brand ="";
+        }
+        public Ball( string _material, int _year_of_create, string _brand, int _quantity, int _price)
+        {
+            material = _material;
+            year_of_create = _year_of_create;
+            brand = _brand;
+            Quantity = _quantity;
+            Price = _price;
+        }
+        void Iusing.Use()
+        {
+            Console.WriteLine("Играем с мячом....");
+        }
+
+        //public string GetInfo()
+        //{
+        //    return "Количество: " + Quantity + "\nЦена: " + Price + "\nМатериал: " + material + "\nДата создания: " + year_of_create + "\nБренд: " + brand;
+        //}
+        public override void Use()
+        {
+            Console.WriteLine("Произошло переопределение абстрактного метода..Играем с мячом дальше....");
+        }
+        public override string ToString()////////переопределение tostring
+        {
+            return "Мячи: "+
+                "\n Количество: "+Quantity.ToString()+
+                "\n Цена: "+ Price.ToString() +
+                "\n Материал: " + material.ToString()+
+                "\n Бренд: "+ brand.ToString()+
+                "\n Год создания: " + year_of_create.ToString() + "\n------------------------------------------------";
+        }
+        public override int GetHashCode() ///////переопределение gethashcode
+        {
+            return Quantity.GetHashCode() + Price.GetHashCode() + material.GetHashCode() + brand.GetHashCode() + year_of_create.GetHashCode();
+        }
+        public virtual void Virtual_For_Ball()
+        {
+            Console.WriteLine("Виртуальный метод мяча............");
+        }
+        public override bool Equals(object obj) ////Переопределение equals
+        {
+            if (obj.GetType() != GetType())
+                return false;
+            if (obj.GetHashCode() != GetHashCode())
+                return false;
+            return true;
+        }
+    }
+}
