@@ -8,10 +8,10 @@ namespace Lab5
             Inventory inv;
             Ball ball1 = new Ball("кожа", 2018, "Популярный бренд",5, 228  );
             Basketball_Ball ball2 = new Basketball_Ball("синтетика", 2009, "Бренд", 16, 1342);
+            Console.WriteLine(ball2.ToString());
             Console.WriteLine(ball1.ToString());
             Iusing ball3 = new Ball("жареные гвозди", 2999, "Nokia", 1, 99999);
             Console.WriteLine(ball3.ToString());
-            Console.WriteLine("Использование AS:");
             inv = ball1 as Inventory;
             Console.WriteLine(inv.ToString());
             Tennis ten1 = new Tennis(1, 2223, 2, "зелёный");

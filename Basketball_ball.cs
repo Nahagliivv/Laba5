@@ -13,12 +13,8 @@ namespace Lab5
             brand = "";
         }
         public Basketball_Ball(string _material, int _year_of_create, string _brand, int _quantity, int _price)
+           : base(_material, _year_of_create, _brand, _quantity, _price)
         {
-            material = _material;
-            year_of_create = _year_of_create;
-            brand = _brand;
-            Quantity = _quantity;
-            Price = _price;
         }
         void Iusing.Use()
         {

@@ -14,12 +14,13 @@ namespace Lab5
 
         public Ball()
         {
-            Quantity = 0;
+            
             Price = 0;
             material ="";
             year_of_create =0;
             brand ="";
         }
+      
         public Ball( string _material, int _year_of_create, string _brand, int _quantity, int _price)
         {
             material = _material;
