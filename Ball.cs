@@ -11,7 +11,7 @@ namespace Lab5
         public string Brand { get { return brand; } } ////////////свойства
         public int Year_of_create { get { return year_of_create; } }
         public string Material { get { return material; } }
-
+        public Type_of_Ball type_of_ball;
         public Ball()
         {
             
@@ -20,7 +20,15 @@ namespace Lab5
             year_of_create =0;
             brand ="";
         }
-      
+        
+        public Ball(Type_of_Ball type_of_ball)
+        {
+            this.type_of_ball = type_of_ball;
+            Price = 0;
+            material = "";
+            year_of_create = 0;
+            brand = "";
+        }
         public Ball( string _material, int _year_of_create, string _brand, int _quantity, int _price)
         {
             material = _material;
@@ -33,7 +41,10 @@ namespace Lab5
         {
             Console.WriteLine("Играем с мячом....");
         }
-
+        public void Print()
+        {
+            Console.WriteLine(type_of_ball);
+        }
         //public string GetInfo()
         //{
         //    return "Количество: " + Quantity + "\nЦена: " + Price + "\nМатериал: " + material + "\nДата создания: " + year_of_create + "\nБренд: " + brand;

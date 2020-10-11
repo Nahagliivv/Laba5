@@ -10,10 +10,10 @@ namespace Lab5
             set => quantity = value;
         }
         private int price; //общая цена элементов данного класса в инвентаре
-        protected int Price
+        public int Price
         {
-            get => price;
-            set => price = value;
+            protected set => price = value;
+             get => price;
         }
         public abstract void Use();
     }

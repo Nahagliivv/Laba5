@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Lab5
 {
-    sealed class Mats : Inventory, Iusing
+    partial class Mats : Inventory, Iusing
     {
         private string form; //форма мата
         private int space; //площадь мата
@@ -19,25 +19,6 @@ namespace Lab5
             form = _form;
             space = _space;
         }
-        void Iusing.Use()
-        {
-            Console.WriteLine("Адыхаем на мате....");
-        }
-        public override void Use()
-        {
-            Console.WriteLine("Уже спим на мате...");
-        }
-        //    public string GetInfo()
-        //    {
-        //        return "Количество: " + Quantity + "\nЦена: " + Price + "\nФорма: " + form + "\nПлощадь: " + space;
-        //}
-        public override string ToString()////////переопределение tostring
-        {
-            return "Маты: " +
-                "\n Количество: " + Quantity.ToString() +
-                "\n Цена: " + Price.ToString() +
-                "\n Форма: " + form.ToString() +
-                "\n Площадь мата: " + space.ToString() + "\n------------------------------------------------";
-        }
+
     }
 }

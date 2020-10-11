@@ -3,7 +3,7 @@ namespace Lab5
 {
     sealed class Basketball_Ball : Ball, Iusing
     {
-        private string type_of_ball = "Это баскетольны(й)(е) мяч(и)";
+        new private string type_of_ball = "Это баскетольны(й)(е) мяч(и)";
         public Basketball_Ball()
         {
             Quantity = 0;
